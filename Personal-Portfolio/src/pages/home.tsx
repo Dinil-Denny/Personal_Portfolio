@@ -1,9 +1,9 @@
-import Hero from "../sections/hero";
+import HeroSection from "../sections/heroSection";
 
 const Home = () => {
   return (
     <div className="bg-brand-blue flex flex-col h-full">
-      <Hero />
+      <HeroSection />
     </div>
   );
 };
