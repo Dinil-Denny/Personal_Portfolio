@@ -75,6 +75,13 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@theme{
+  --color-brand-orange : #ff7300;
+  --color-brand-yellow : #fece00;
+  --color-brand-blue : #0035c1;
+  --color-brand-white : #ffffff;
+}
+
 /* :root {
   --text: #6b6375;
   --text-h: #08060d;

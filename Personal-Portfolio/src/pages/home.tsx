@@ -2,10 +2,10 @@ import Hero from "../sections/hero";
 
 const Home = () => {
   return (
-    <>
-        <Hero/>
-    </>
-  )
-}
+    <div className="bg-brand-blue flex flex-col h-full">
+      <Hero />
+    </div>
+  );
+};
 
 export default Home;
