@@ -18,7 +18,7 @@ const Navbar = () => {
       {/* 
         Glassmorphism Container:
       */}
-      <nav className="flex items-center justify-between px-2 py-2 rounded-full border border-white/20 bg-white/10 p-6 text-white shadow-xl backdrop-blur-md">
+      <nav className="flex items-center justify-between px-2 py-3 rounded-full border border-white/20 bg-white/10 p-6 text-white shadow-xl backdrop-blur-md">
         
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center space-x-1">
