@@ -25,12 +25,14 @@ const skillsData : TechBadgeProps[] =
     {slNo : 20, text : 'VS Code', iconSrc : '../src/assets/icons/vscode-icon.svg'},
     {slNo : 21, text : 'Razorpay', iconSrc : '../src/assets/icons/razorpay-icon.svg'},
     {slNo : 22, text : 'Figma', iconSrc : '../src/assets/icons/figma-icon.svg'},
+    {slNo : 23, text : 'Jira', iconSrc : '../src/assets/icons/jira-icon.svg'},
+    {slNo : 24, text : 'Jenkins', iconSrc : '../src/assets/icons/jenkins-icon.svg'},
   ]
 
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="relative w-full min-h-screen bg-[#0d3eb8] flex items-center overflow-hidden">
+    <section id="skills" className="relative w-full min-h-screen flex items-center overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 lg:px-20 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* Left Column: Heading and Badge Cloud */}
@@ -44,7 +46,7 @@ const SkillsSection = () => {
             max-w-[600px] constrains the width so the flex-wrap forces the badges 
             into the 3-2-3-2-3 staggered row layout seen in your design.
           */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-5 w-full max-w-[600px]">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-5 w-full max-w-150">
             {skillsData.map((skill) => (
               <SkillBadge 
                 key={skill.slNo}

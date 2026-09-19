@@ -5,8 +5,7 @@ const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
-  { name: "Project", href: "#project" },
-  { name: "Journey", href: "#journey" },
+  { name: "Project", href: "#project" },  
   { name: "Contact", href: "#contact" },
 ];
 
@@ -14,7 +13,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="absolute top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-auto md:max-w-fit">
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-auto md:max-w-fit">
       {/* 
         Glassmorphism Container:
       */}
