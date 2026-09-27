@@ -1,38 +1,68 @@
 import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
+// import { Badge } from "../ui/badge";
 import {
   Card,
-  CardAction,
+  // CardAction,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import SpotlightCard from "../SpotlightCard";
 
-const ProjectCard = () => {
-  return (
-    <Card className="relative mx-auto w-full max-w-sm pt-0">
-      <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
-      <img
-        src="https://avatar.vercel.sh/shadcn1"
-        alt="Event cover"
-        className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
-      />
-      <CardHeader>
-        <CardAction>
-          <Badge variant="secondary">Featured</Badge>
-        </CardAction>
-        <CardTitle>Design systems meetup</CardTitle>
-        <CardDescription>
-          A practical talk on component APIs, accessibility, and shipping
-          faster.
-        </CardDescription>
-      </CardHeader>
-      <CardFooter>
-        <Button className="w-full">View Event</Button>
-      </CardFooter>
-    </Card>
-  )
+export interface ProjectDetails {
+  id?: number;
+  heading: string;
+  description: string;
+  imageSrc: string;
+  gitHubLink: string;
 }
+
+const ProjectCard = ({
+  heading,
+  description,
+  imageSrc,
+  gitHubLink,
+}: ProjectDetails) => {
+  return (
+    <SpotlightCard
+      className="custom-spotlight-card"
+      spotlightColor="rgba(0, 229, 255, 0.2)"
+    >
+      <Card className="relative w-full pt-0 flex flex-col h-full bg-white/10 backdrop-blur-md border border-white/20 shadow-xl ring-0">
+        {/* Screen bezel frame */}
+        <div className="p-3 pb-2 rounded-t-xl">
+          <div className="relative rounded-lg overflow-hidden border border-white/10 shadow-inner">
+            <img
+              src={imageSrc}
+              alt="Event cover"
+              className="aspect-video w-full object-cover"
+            />
+          </div>
+          {/* Webcam dot — monitor aesthetic */}
+          <div className="flex justify-center mt-1.5">
+            <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+          </div>
+        </div>
+        <CardHeader className="flex-grow">
+          {/* <CardAction>
+          <Badge variant="secondary">Featured</Badge>
+        </CardAction> */}
+          <CardTitle className="text-white">{heading}</CardTitle>
+          <CardDescription className="text-white/70">
+            {description}
+          </CardDescription>
+        </CardHeader>
+        <CardFooter className="mt-auto">
+          <Button className="w-full cursor-pointer bg-brand-orange">
+            <a href={gitHubLink} target="_blank" rel="noopener noreferrer">
+              View in GitHub
+            </a>
+          </Button>
+        </CardFooter>
+      </Card>
+    </SpotlightCard>
+  );
+};
 
 export default ProjectCard;

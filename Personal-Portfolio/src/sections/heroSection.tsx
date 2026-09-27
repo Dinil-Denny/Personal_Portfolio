@@ -18,7 +18,7 @@ const HeroSection = () => {
             <TextType
               text={["Building\nDigital\nExperiences\nWith Code."]}
               typingSpeed={75}
-              pauseDuration={2000}
+              pauseDuration={3000}
               showCursor
               cursorCharacter="|"
               deletingSpeed={50}
@@ -27,7 +27,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl lg:text-2xl text-brand-yellow font-semibold leading-snug max-w-full">
-            Hi, I'm Dinil Denny, a Full Stack Developer specializing in crafting
+            Hi I'm Dinil Denny, a Full Stack Developer specializing in crafting
             robust, scalable applications using React, TypeScript, Node, and
             MongoDB.
           </p>

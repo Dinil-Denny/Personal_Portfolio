@@ -37,7 +37,7 @@ const SkillsSection = () => {
         
         {/* Left Column: Heading and Badge Cloud */}
         <div className="flex flex-col items-center lg:items-start z-10 w-full">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white uppercase tracking-wide mb-10 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white uppercase tracking-wide mb-10 md:mb-12">
             Skills & Tools
           </h2>
           
@@ -46,7 +46,7 @@ const SkillsSection = () => {
             max-w-[600px] constrains the width so the flex-wrap forces the badges 
             into the 3-2-3-2-3 staggered row layout seen in your design.
           */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-5 w-full max-w-150">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-5 w-full max-w-full">
             {skillsData.map((skill) => (
               <SkillBadge 
                 key={skill.slNo}

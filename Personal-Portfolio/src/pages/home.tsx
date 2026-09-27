@@ -1,25 +1,27 @@
 import HeroSection from "../sections/heroSection";
 import AboutSection from "../sections/aboutSection";
 import SkillsSection from "../sections/skillsSection";
+import ProjectSection from "../sections/projectsSection";
+
 import GlowCursor from "../components/GlowCursor";
 
 const Home = () => {
   return (
     <GlowCursor
-      color="#fece00"
-      secondaryColor="#ffffff"
-      trailLength={40}
-      trailWidth={3}
-      trailTaper={0.8}
+      color="#67E8F9"
+      secondaryColor="#A78BFA"
+      trailLength={8}
+      trailWidth={2}
+      trailTaper={1}
       followSpeed={0.16}
       glowIntensity={1.9}
-      glowSpread={1.2}
+      glowSpread={0.5}
       hotspot={0.65}
       brightness={1.25}
       opacity={1}
       pulseSpeed={1.1}
-      noiseStrength={0.035}
-      idleFade={true}
+      noiseStrength={0.03}
+      idleFade
       idleTimeout={700}
       fadeDuration={900}
       blendMode="screen"
@@ -33,6 +35,7 @@ const Home = () => {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
+        <ProjectSection />
       </div>
     </GlowCursor>
   );

@@ -62,7 +62,7 @@ import ScrollExpand from "../components/ScrollExpand";
 const AboutSection = () => {
   return (
     // 1. A tall wrapper ensures there is enough scroll distance to trigger the expansion
-    <div className="w-full h-[300vh]">
+    <div className="w-full h-[260vh]">
       
       {/* 2. The ScrollExpand component with your chosen background image */}
       <ScrollExpand
