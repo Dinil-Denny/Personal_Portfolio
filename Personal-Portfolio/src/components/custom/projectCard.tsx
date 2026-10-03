@@ -1,4 +1,4 @@
-import { Button } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 // import { Badge } from "../ui/badge";
 import {
   Card,
@@ -54,11 +54,14 @@ const ProjectCard = ({
           </CardDescription>
         </CardHeader>
         <CardFooter className="mt-auto">
-          <Button asChild className="w-full cursor-pointer bg-brand-orange">
-            <a href={gitHubLink} target="_blank" rel="noopener noreferrer">
-              View in GitHub
-            </a>
-          </Button>
+          <a 
+            href={gitHubLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={buttonVariants({ className: "w-full cursor-pointer bg-brand-orange hover:bg-brand-orange/90 text-white hover:text-white" })}
+          >
+            View in GitHub
+          </a>
         </CardFooter>
       </Card>
     </SpotlightCard>
