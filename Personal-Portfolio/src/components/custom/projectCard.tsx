@@ -44,7 +44,7 @@ const ProjectCard = ({
             <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
           </div>
         </div>
-        <CardHeader className="flex-grow">
+        <CardHeader className="grow">
           {/* <CardAction>
           <Badge variant="secondary">Featured</Badge>
         </CardAction> */}
@@ -54,7 +54,7 @@ const ProjectCard = ({
           </CardDescription>
         </CardHeader>
         <CardFooter className="mt-auto">
-          <Button className="w-full cursor-pointer bg-brand-orange">
+          <Button asChild className="w-full cursor-pointer bg-brand-orange">
             <a href={gitHubLink} target="_blank" rel="noopener noreferrer">
               View in GitHub
             </a>

@@ -1,5 +1,6 @@
 import { Button } from "../components/ui/button";
 import TextType from "../components/TextType";
+import resumePdf from "../assets/Dinil_Denny___Resume.pdf";
 
 const HeroSection = () => {
   return (
@@ -31,13 +32,14 @@ const HeroSection = () => {
             robust, scalable applications using React, TypeScript, Node, and
             MongoDB.
           </p>
-
-          <Button
-            size="lg"
-            className="bg-brand-orange hover:bg-[#e06900] hover:cursor-pointer text-white font-bold text-lg px-10 py-7 rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95"
-          >
-            View Resume
-          </Button>
+          <a href={resumePdf} target="_blank" rel="noopener noreferrer">
+            <Button
+              size="lg"
+              className="bg-brand-orange hover:bg-[#e06900] hover:cursor-pointer text-white font-bold text-lg px-10 py-7 rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95"
+            >
+              View Resume
+            </Button>
+          </a>
         </div>
 
         {/* Right Column: 3D Avatar Container */}

@@ -2,6 +2,8 @@ import HeroSection from "../sections/heroSection";
 import AboutSection from "../sections/aboutSection";
 import SkillsSection from "../sections/skillsSection";
 import ProjectSection from "../sections/projectsSection";
+import ContactSection from "../sections/contactSection";
+import Footer from "../components/layouts/footer";
 
 import GlowCursor from "../components/GlowCursor";
 
@@ -36,6 +38,8 @@ const Home = () => {
         <AboutSection />
         <SkillsSection />
         <ProjectSection />
+        <ContactSection />
+        <Footer />
       </div>
     </GlowCursor>
   );

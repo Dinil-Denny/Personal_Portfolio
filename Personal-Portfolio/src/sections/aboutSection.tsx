@@ -77,10 +77,10 @@ const AboutSection = () => {
         {/* This card will fade in when full-bleed is reached. */}
         <section
           id="about"
-          className="min-h-screen w-full flex items-center justify-center p-6 md:p-12 lg:p-24 overflow-hidden"
+          className="min-h-screen w-full flex items-center justify-center p-6 pt-20 md:p-12 md:pt-12 lg:p-24 overflow-hidden"
         >
           {/* Main White Card Container */}
-          <div className="relative w-full max-w-6xl bg-white rounded-[2rem] md:rounded-[3rem] p-8 md:p-12 lg:p-20 flex flex-col lg:flex-row items-center gap-12 shadow-2xl">
+          <div className="relative w-full max-w-6xl bg-white rounded-[2rem] md:rounded-[3rem] p-8 pt-20 md:p-12 lg:p-20 flex flex-col lg:flex-row items-center gap-12 shadow-2xl">
             
             {/* Left Column: Text Content */}
             <div className="flex-1 flex flex-col items-start space-y-6 md:space-y-8 z-10">
