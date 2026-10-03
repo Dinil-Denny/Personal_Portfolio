@@ -48,7 +48,7 @@ import ScrollExpand from "../components/ScrollExpand";
 //             straps overlap the top boundary of the white card, recreating the 3D depth of your design.
 //           */}
 //           <img
-//             src="/src/assets/images/idCard.svg" // Make sure this path points to your actual SVG
+//             src="/images/idCard.svg" // Make sure this path points to your actual SVG
 //             alt="Dinil Denny ID Card"
 //             className="w-full max-w-90 md:max-w-125 lg:max-w-162.5 h-auto object-contain drop-shadow-2xl lg:-mt-20"
 //           />
@@ -66,7 +66,7 @@ const AboutSection = () => {
       
       {/* 2. The ScrollExpand component with your chosen background image */}
       <ScrollExpand
-        src="/src/assets/images/blackBackground.svg"
+        src="/images/blackBackground.svg"
         alt="background image"
         mediaType="image"
         title="WHO I AM"
@@ -113,7 +113,7 @@ const AboutSection = () => {
             {/* Right Column: ID Card SVG */}
             <div className="flex-1 w-full flex justify-center lg:justify-end z-20">
               <img
-                src="/src/assets/images/idCard.svg"
+                src="/images/idCard.svg"
                 alt="Dinil Denny ID Card"
                 className="w-full max-w-90 md:max-w-125 lg:max-w-162.5 h-auto object-contain drop-shadow-2xl lg:-mt-20"
               />

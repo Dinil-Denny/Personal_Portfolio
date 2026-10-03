@@ -48,7 +48,7 @@ const HeroSection = () => {
           <div className="relative inline-flex flex-col items-center">
             {/* THE IMAGE (Unchanged except removal of drop-shadow class if previously added) */}
             <img
-              src="/src/assets/images/HeroImg3D.svg"
+              src="/images/HeroImg3D.svg"
               alt="3D Avatar"
               className="w-full max-w-sm md:max-w-lg lg:max-w-2xl h-auto object-contain"
             />

@@ -3,30 +3,30 @@ import type { TechBadgeProps } from "../components/custom/skillBadge";
 
 const skillsData : TechBadgeProps[] = 
   [
-    {slNo : 1, text : 'HTML', iconSrc : '../src/assets/icons/html-logo.svg'},
-    {slNo : 2, text : 'CSS', iconSrc : '../src/assets/icons/css-logo.svg'},
-    {slNo : 3, text : 'Bootstrap', iconSrc : '../src/assets/icons/bootstrap-icon.svg'},
-    {slNo : 4, text : 'Tailwind CSS', iconSrc : '../src/assets/icons/tailwind-icon.svg'},
-    {slNo : 5, text : 'Shadcn', iconSrc: '../src/assets/icons/shadcn-icon.svg'},
-    {slNo : 6, text : 'JavaScript', iconSrc : '../src/assets/icons/js-icon.svg'},
-    {slNo : 7, text : 'TypeScript', iconSrc : '../src/assets/icons/ts-icon.svg'},
-    {slNo : 8, text : 'Node.js', iconSrc : '../src/assets/icons/node.js-icon.svg'},
-    {slNo : 9, text : 'Express.js', iconSrc : '../src/assets/icons/express.js-icon.svg'},
-    {slNo : 10, text : 'MongoDB', iconSrc : '../src/assets/icons/mongoDB-icon.svg'},
-    {slNo : 11, text : 'PostgreSQL', iconSrc : '../src/assets/icons/postgreSQL-icon.svg'},
-    {slNo : 12, text : 'React.js', iconSrc: '../src/assets/icons/react.js-icon.svg'},
-    {slNo : 13, text : 'AWS', iconSrc : '../src/assets/icons/aws-icon.svg'},
-    {slNo : 14, text : 'Cloudinary', iconSrc : '../src/assets/icons/cloudinary-icon.svg'},
-    {slNo : 15, text : 'Git', iconSrc : '../src/assets/icons/git-icon.svg'},
-    {slNo : 16, text : 'JWT', iconSrc : '../src/assets/icons/jwt-icon.svg'},
-    {slNo : 17, text : 'NPM', iconSrc : '../src/assets/icons/npm-icon.svg'},
-    {slNo : 18, text : 'Vite', iconSrc : '../src/assets/icons/vite-icon.svg'},
-    {slNo : 19, text : 'Postman', iconSrc : '../src/assets/icons/postman-icon.svg'},
-    {slNo : 20, text : 'VS Code', iconSrc : '../src/assets/icons/vscode-icon.svg'},
-    {slNo : 21, text : 'Razorpay', iconSrc : '../src/assets/icons/razorpay-icon.svg'},
-    {slNo : 22, text : 'Figma', iconSrc : '../src/assets/icons/figma-icon.svg'},
-    {slNo : 23, text : 'Jira', iconSrc : '../src/assets/icons/jira-icon.svg'},
-    {slNo : 24, text : 'Jenkins', iconSrc : '../src/assets/icons/jenkins-icon.svg'},
+    {slNo : 1, text : 'HTML', iconSrc : '/icons/html-logo.svg'},
+    {slNo : 2, text : 'CSS', iconSrc : '/icons/css-logo.svg'},
+    {slNo : 3, text : 'Bootstrap', iconSrc : '/icons/bootstrap-icon.svg'},
+    {slNo : 4, text : 'Tailwind CSS', iconSrc : '/icons/tailwind-icon.svg'},
+    {slNo : 5, text : 'Shadcn', iconSrc: '/icons/shadcn-icon.svg'},
+    {slNo : 6, text : 'JavaScript', iconSrc : '/icons/js-icon.svg'},
+    {slNo : 7, text : 'TypeScript', iconSrc : '/icons/ts-icon.svg'},
+    {slNo : 8, text : 'Node.js', iconSrc : '/icons/node.js-icon.svg'},
+    {slNo : 9, text : 'Express.js', iconSrc : '/icons/express.js-icon.svg'},
+    {slNo : 10, text : 'MongoDB', iconSrc : '/icons/mongoDB-icon.svg'},
+    {slNo : 11, text : 'PostgreSQL', iconSrc : '/icons/postgreSQL-icon.svg'},
+    {slNo : 12, text : 'React.js', iconSrc: '/icons/react.js-icon.svg'},
+    {slNo : 13, text : 'AWS', iconSrc : '/icons/aws-icon.svg'},
+    {slNo : 14, text : 'Cloudinary', iconSrc : '/icons/cloudinary-icon.svg'},
+    {slNo : 15, text : 'Git', iconSrc : '/icons/git-icon.svg'},
+    {slNo : 16, text : 'JWT', iconSrc : '/icons/jwt-icon.svg'},
+    {slNo : 17, text : 'NPM', iconSrc : '/icons/npm-icon.svg'},
+    {slNo : 18, text : 'Vite', iconSrc : '/icons/vite-icon.svg'},
+    {slNo : 19, text : 'Postman', iconSrc : '/icons/postman-icon.svg'},
+    {slNo : 20, text : 'VS Code', iconSrc : '/icons/vscode-icon.svg'},
+    {slNo : 21, text : 'Razorpay', iconSrc : '/icons/razorpay-icon.svg'},
+    {slNo : 22, text : 'Figma', iconSrc : '/icons/figma-icon.svg'},
+    {slNo : 23, text : 'Jira', iconSrc : '/icons/Jira-icon.svg'},
+    {slNo : 24, text : 'Jenkins', iconSrc : '/icons/Jenkins-icon.svg'},
   ]
 
 
@@ -61,7 +61,7 @@ const SkillsSection = () => {
         <div className="flex justify-center items-center z-10 w-full mt-16 lg:mt-0">
           <div className="relative inline-flex flex-col items-center">
             <img 
-              src="../src/assets/images/SkillSectionImg.svg" // Replace with your actual asset path
+              src="/images/SkillSectionImg.svg" // Replace with your actual asset path
               alt="3D Avatar pointing to skills" 
               className="w-full max-w-sm md:max-w-lg lg:max-w-2xl h-auto object-contain drop-shadow-2xl"
             />
