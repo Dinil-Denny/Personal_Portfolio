@@ -14,7 +14,7 @@ const ContactSection = () => {
     const formData = new FormData(form);
     
     // Append the access key safely
-    formData.append("access_key", import.meta.env.WEB3FORMS_ACCESS_KEY || "");
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "");
 
     // Convert FormData to a standard JSON object (Web3Forms recommended for AJAX)
     const object = Object.fromEntries(formData);
