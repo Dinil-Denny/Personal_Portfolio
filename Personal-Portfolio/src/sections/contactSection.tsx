@@ -62,7 +62,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-[2rem] p-8 md:p-12 shadow-2xl">
+        <div className="bg-white/15 lg:bg-white/10 lg:backdrop-blur-md border border-white/20 rounded-[2rem] p-8 md:p-12 shadow-2xl">
           <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
             
             {/* Subject - useful for Web3Forms so you know what the email is about */}

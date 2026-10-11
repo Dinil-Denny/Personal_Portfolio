@@ -1,4 +1,4 @@
-import { useEffect, useRef, type HTMLAttributes, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type HTMLAttributes, type ReactNode } from 'react';
 import { Mesh, Program, Renderer, Triangle } from 'ogl';
 
 const MAX_POINTS = 64;
@@ -199,6 +199,11 @@ const GlowCursor = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const propsRef = useRef<GlowCursorConfig>({} as GlowCursorConfig);
 
+  // Skip heavy WebGL rendering on touch devices (mobile/tablet)
+  const [isTouchDevice] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches
+  );
+
   propsRef.current = {
     color,
     secondaryColor,
@@ -222,6 +227,7 @@ const GlowCursor = ({
   };
 
   useEffect(() => {
+    if (isTouchDevice) return;
     const container = containerRef.current;
     const canvas = canvasRef.current;
     if (!container || !canvas) return;
@@ -279,8 +285,8 @@ const GlowCursor = ({
     let destroyed = false;
 
     const resize = () => {
-      width = Math.max(container.clientWidth, 1);
-      height = Math.max(container.clientHeight, 1);
+      width = Math.max(window.innerWidth, 1);
+      height = Math.max(window.innerHeight, 1);
       renderer.setSize(width, height);
       program.uniforms.uResolution.value = [width, height];
     };
@@ -299,9 +305,8 @@ const GlowCursor = ({
     };
 
     const updatePointer = (event: PointerEvent) => {
-      const rect = container.getBoundingClientRect();
-      const x = clamp(event.clientX - rect.left, 0, rect.width);
-      const y = clamp(rect.height - (event.clientY - rect.top), 0, rect.height);
+      const x = clamp(event.clientX, 0, width);
+      const y = clamp(height - event.clientY, 0, height);
       if (!initialized) initializeTrail(x, y);
       target.x = x;
       target.y = y;
@@ -366,39 +371,47 @@ const GlowCursor = ({
       if (!destroyed) raf = requestAnimationFrame(render);
     };
 
-    const resizeObserver = new ResizeObserver(resize);
-    resizeObserver.observe(container);
-    container.addEventListener('pointermove', updatePointer);
-    container.addEventListener('pointerenter', updatePointer);
-    container.addEventListener('pointerleave', onPointerLeave);
+    window.addEventListener('resize', resize);
+    document.addEventListener('pointermove', updatePointer);
+    document.addEventListener('pointerenter', updatePointer);
+    document.addEventListener('pointerleave', onPointerLeave);
     resize();
     raf = requestAnimationFrame(render);
 
     return () => {
       destroyed = true;
       cancelAnimationFrame(raf);
-      resizeObserver.disconnect();
-      container.removeEventListener('pointermove', updatePointer);
-      container.removeEventListener('pointerenter', updatePointer);
-      container.removeEventListener('pointerleave', onPointerLeave);
+      window.removeEventListener('resize', resize);
+      document.removeEventListener('pointermove', updatePointer);
+      document.removeEventListener('pointerenter', updatePointer);
+      document.removeEventListener('pointerleave', onPointerLeave);
       mesh.geometry.remove();
       program.remove();
     };
-  }, [maxDevicePixelRatio]);
+  }, [isTouchDevice, maxDevicePixelRatio]);
+
+  // On touch devices, render children directly without WebGL overhead
+  if (isTouchDevice) {
+    return (
+      <div className={className} style={style} {...rest}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div
       ref={containerRef}
-      className={`relative h-full w-full overflow-clip${className ? ` ${className}` : ''}`}
+      className={`relative h-full w-full${className ? ` ${className}` : ''}`}
       style={style}
       {...rest}
     >
       <canvas
         ref={canvasRef}
-        className="pointer-events-none absolute inset-0 z-[2] block h-full w-full select-none"
+        className="pointer-events-none fixed inset-0 z-[2] block w-screen h-screen select-none"
         aria-hidden="true"
       />
-      {children && <div className="relative z-1 h-full w-full">{children}</div>}
+      {children && <div className="relative z-[1] h-full w-full">{children}</div>}
     </div>
   );
 };

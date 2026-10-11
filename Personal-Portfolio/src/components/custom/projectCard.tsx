@@ -29,13 +29,15 @@ const ProjectCard = ({
       className="custom-spotlight-card"
       spotlightColor="rgba(0, 229, 255, 0.2)"
     >
-      <Card className="relative w-full pt-0 flex flex-col h-full bg-white/10 backdrop-blur-md border border-white/20 shadow-xl ring-0">
+      <Card className="relative w-full pt-0 flex flex-col h-full bg-white/10 border border-white/20 shadow-xl ring-0">
         {/* Screen bezel frame */}
         <div className="p-3 pb-2 rounded-t-xl">
           <div className="relative rounded-lg overflow-hidden border border-white/10 shadow-inner">
             <img
               src={imageSrc}
               alt="Event cover"
+              loading="lazy"
+              decoding="async"
               className="aspect-video w-full object-cover"
             />
           </div>

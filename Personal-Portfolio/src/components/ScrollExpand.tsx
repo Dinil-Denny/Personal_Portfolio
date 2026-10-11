@@ -140,6 +140,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
     if (!root || !track || !stage) return;
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
     let raf = 0;
     let current = 0;
@@ -189,7 +190,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
 
     const onScroll = () => {
       target = readProgress();
-      if (propsRef.current.smoothing <= 0 || reduceMotion) {
+      if (propsRef.current.smoothing <= 0 || reduceMotion || isTouchDevice) {
         current = target;
         applyProgress(current);
         return;

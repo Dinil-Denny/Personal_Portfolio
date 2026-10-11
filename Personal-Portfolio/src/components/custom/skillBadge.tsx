@@ -7,7 +7,7 @@ export interface TechBadgeProps {
 
 const SkillBadge = ({ text, iconSrc, customClass }: TechBadgeProps) => {
   return (
-    <div className="inline-flex items-center gap-3 pl-2 pr-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 shadow-sm transition-transform hover:scale-105 cursor-default">
+    <div className="inline-flex items-center gap-3 pl-2 pr-6 py-2 rounded-full bg-white/15 lg:bg-white/10 lg:backdrop-blur-md border border-white/15 shadow-sm transition-transform hover:scale-105 cursor-default">
       {/*Icon Container*/}
       <div className="flex items-center justify-center min-w-10 h-10 rounded-xl overflow-hidden shrink-0">
         <img
